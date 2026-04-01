@@ -7,6 +7,7 @@ per-node credential fetching with a single upfront resolution.
 
 from __future__ import annotations
 
+import logging
 import os
 from typing import Any
 
@@ -14,6 +15,8 @@ from langsmith import traceable
 
 from app.output import get_tracker
 from app.state import InvestigationState
+
+logger = logging.getLogger(__name__)
 
 # Services we skip (already handled by the webhook layer or not queryable)
 _SKIP_SERVICES = {"slack"}
@@ -170,6 +173,7 @@ def _decode_org_id_from_token(token: str) -> str:
         claims = _json.loads(base64.urlsafe_b64decode(payload_b64))
         return claims.get("organization") or claims.get("org_id") or ""
     except Exception:
+        logger.debug("Failed to decode org_id from JWT token", exc_info=True)
         return ""
 
 
@@ -352,6 +356,7 @@ def node_resolve_integrations(state: InvestigationState) -> dict:
                 from app.integrations.clients.tracer_client import get_tracer_client_for_org
                 all_integrations = get_tracer_client_for_org(org_id, env_token).get_all_integrations()
             except Exception:
+                logger.debug("Remote integrations fetch failed for org %s, falling back to local", org_id, exc_info=True)
                 return _resolve_from_local_sources(tracker)
             return _resolve_remote_with_local_fallback(all_integrations, tracker)
         else:

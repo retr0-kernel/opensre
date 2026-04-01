@@ -143,7 +143,7 @@ class GrafanaLogsTool(BaseTool):
 
         logs_data = result.get("logs", [])
         error_keywords = ("error", "fail", "exception", "traceback")
-        error_logs = [log for log in logs_data if any(kw in log["message"].lower() for kw in error_keywords)]
+        error_logs = [log for log in logs_data if any(kw in log.get("message", "").lower() for kw in error_keywords)]
         return {
             "source": "grafana_loki",
             "available": True,

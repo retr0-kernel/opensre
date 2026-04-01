@@ -252,6 +252,7 @@ class GrafanaClientBase:
             values: list[str] = data.get("data", [])
             return values
         except Exception:
+            logger.debug("Failed to fetch Loki label values for %s", label, exc_info=True)
             return []
 
     def query_alert_rules(self, folder: str | None = None) -> list[dict[str, Any]]:

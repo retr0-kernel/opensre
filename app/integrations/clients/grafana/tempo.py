@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
+import logging
 from typing import TYPE_CHECKING, Any
 
 import requests
 
 if TYPE_CHECKING:
     from app.integrations.clients.grafana.base import GrafanaClientBase
+
+logger = logging.getLogger(__name__)
 
 
 class TempoMixin:
@@ -128,6 +131,7 @@ class TempoMixin:
 
                 return {"spans": spans}
         except Exception:
+            logger.debug("Failed to fetch Tempo trace spans", exc_info=True)
             return {"spans": []}
 
         return {"spans": []}

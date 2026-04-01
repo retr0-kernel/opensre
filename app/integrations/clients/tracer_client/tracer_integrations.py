@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+import logging
 from dataclasses import dataclass
 from typing import Any
 
 from app.integrations.clients.tracer_client.tracer_client_base import TracerClientBase
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -69,6 +72,7 @@ class TracerIntegrationsMixin(TracerClientBase):
                 try:
                     integration["credentials"] = json.loads(creds)
                 except (json.JSONDecodeError, TypeError):
+                    logger.warning("Malformed credentials JSON for integration %s", integration.get("id", "unknown"))
                     integration["credentials"] = {}
 
         return integrations
@@ -98,6 +102,7 @@ class TracerIntegrationsMixin(TracerClientBase):
             try:
                 credentials = json.loads(credentials)
             except (json.JSONDecodeError, TypeError):
+                logger.warning("Malformed Grafana credentials JSON for integration %s", integration.get("id", "unknown"))
                 credentials = {}
 
         return GrafanaIntegrationCredentials(

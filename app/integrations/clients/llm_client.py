@@ -7,6 +7,7 @@ Handles structured parsing of LLM responses.
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
 import time
@@ -22,6 +23,8 @@ from app.config import (
     ANTHROPIC_LLM_CONFIG,
     OPENAI_LLM_CONFIG,
 )
+
+logger = logging.getLogger(__name__)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Data Types
@@ -203,6 +206,8 @@ class OpenAILLMClient:
         else:
             raise RuntimeError("LLM invocation failed without a concrete error") from last_err
 
+        if not response.choices:
+            raise RuntimeError("OpenAI API returned an empty choices list")
         content = response.choices[0].message.content or ""
         return LLMResponse(content=content.strip())
 
@@ -295,21 +300,21 @@ def _extract_json_payload(text: str) -> Any:
     try:
         return _safe_json_loads(cleaned)
     except json.JSONDecodeError:
-        pass
+        logger.debug("Direct JSON parse failed, trying regex extraction")
 
     obj_match = re.search(r"\{.*\}", cleaned, re.DOTALL)
     if obj_match:
         try:
             return _safe_json_loads(obj_match.group(0))
         except json.JSONDecodeError:
-            pass
+            logger.debug("Object regex JSON parse failed, trying array extraction")
 
     list_match = re.search(r"\[.*\]", cleaned, re.DOTALL)
     if list_match:
         try:
             return _safe_json_loads(list_match.group(0))
         except json.JSONDecodeError:
-            pass
+            logger.debug("Array regex JSON parse also failed")
 
     raise ValueError("LLM did not return valid JSON payload")
 

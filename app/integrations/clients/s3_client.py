@@ -9,7 +9,9 @@ from app.integrations.clients.env import make_boto3_client, require_aws_credenti
 try:
     from botocore.exceptions import ClientError
 except ImportError:
-    ClientError = Exception  # type: ignore[assignment, misc]
+
+    class ClientError(Exception):  # type: ignore[no-redef]
+        """Stub when botocore is not installed; prevents over-broad except clauses."""
 
 
 @dataclass(frozen=True)
