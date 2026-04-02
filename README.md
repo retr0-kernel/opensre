@@ -95,19 +95,17 @@ Unlike closed SRE platforms, Tracer is **fully open source and self-hostable**. 
 
 ## How is Open SRE different?
 
-[SWE-smith](https://arxiv.org/abs/2504.21798) gave coding agents scalable training data and clear feedback. Production incident response still has no equivalent.
+[SWE-smith](https://arxiv.org/abs/2504.21798) gave coding agents scalable training data and clear feedback. Production incident response still has no equivalent. Distributed failures are slower, noisier, and harder to simulate and evaluate than local code tasks, which is why AI SRE, and AI for production debugging more broadly, remains unsolved.
 
-Distributed failures are slower, noisier, and harder to simulate and evaluate than local code tasks, which is why AI SRE, and AI for production debugging more broadly, remains unsolved.
+Open SRE is building that missing layer: 
 
-Open SRE is building that missing layer: an open reinforcement learning environment for infrastructure incident response, with end-to-end tests and synthetic incident simulations for realistic production failures.
+> an open reinforcement learning environment for infrastructure incident response, with end-to-end tests and synthetic incident simulations for realistic production failures
 
 We do that by:
 - running [scored synthetic RCA suites](tests/synthetic/rds_postgres/README.md) for RDS PostgreSQL that check root-cause accuracy, required evidence, and adversarial red herrings
 - running [Kubernetes end-to-end tests](tests/e2e/kubernetes/) and the [`test-thorough` CI matrix](.github/workflows/ci.yml) across cloud-backed scenarios like CloudWatch, Lambda, ECS Fargate, and Flink
 
-Our goal is to scale this into thousands of realistic infrastructure failure scenarios and become the benchmark and training ground for AI SRE.
-
-You can contribute by adding new failure modes to existing cloud assets or building new suites for novel assets. Right now, our highest-priority areas are database asset models and new Kubernetes failure modes.
+Our goal is to scale this into thousands of realistic infrastructure failure scenarios and become the benchmark and training ground for AI SRE. You can contribute by adding new failure modes to existing cloud assets or building new suites for novel assets. Right now, our highest-priority areas are database asset models and new Kubernetes failure modes.
 
 **Built in the open. Trusted in production.**
 
