@@ -137,28 +137,32 @@ Output:
 
 ## Capabilities
 
-|                                          |                                                           |
-| ---------------------------------------- | --------------------------------------------------------- |
-| 🔍 **Structured incident investigation** | Correlated root-cause analysis across all your signals    |
-| 📋 **Runbook-aware reasoning**           | Tracer reads your runbooks and applies them automatically |
-| 🔮 **Predictive failure detection**      | Catch emerging issues before they page you                |
-| 🔗 **Evidence-backed root cause**        | Every conclusion is linked to the data behind it          |
-| 🤖 **Full LLM flexibility**              | Bring your own model - OpenAI, Anthropic, and more        |
+|                                          |                                                                                  |
+| ---------------------------------------- | -------------------------------------------------------------------------------- |
+| 🔍 **Structured incident investigation** | Correlated root-cause analysis across all your signals                           |
+| 📋 **Runbook-aware reasoning**           | Tracer reads your runbooks and applies them automatically                        |
+| 🔮 **Predictive failure detection**      | Catch emerging issues before they page you                                       |
+| 🔗 **Evidence-backed root cause**        | Every conclusion is linked to the data behind it                                 |
+| 🤖 **Full LLM flexibility**              | Bring your own model — Anthropic, OpenAI, Ollama, Gemini, OpenRouter, NVIDIA NIM |
 
 ---
 
 ## Integrations
 
-Tracer integrates with the systems that power modern cloud platforms.
+OpenSRE connects to **40+ tools and services** across the modern cloud stack — from LLM providers and observability platforms to infrastructure, databases, and incident management.
 
-| Category           | Integrations                                                                                                                                                                                                                                                                           |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Data Platform**  | Apache Airflow · Apache Kafka · Apache Spark                                                                                                                                                                                                                                           |
-| **Observability**  | <img src="docs/assets/icons/grafana.webp" width="16"> Grafana · <img src="docs/assets/icons/datadog.svg" width="16"> Datadog · Honeycomb · Coralogix · <img src="docs/assets/icons/cloudwatch.png" width="16"> CloudWatch · <img src="docs/assets/icons/sentry.png" width="16"> Sentry |
-| **Infrastructure** | <img src="docs/assets/icons/kubernetes.png" width="16"> Kubernetes · <img src="docs/assets/icons/aws.png" width="16"> AWS · <img src="docs/assets/icons/gcp.jpg" width="16"> GCP · <img src="docs/assets/icons/azure.png" width="16"> Azure                                            |
-| **Dev Tools**      | <img src="docs/assets/icons/github.webp" width="16"> GitHub                                                                                                                                                                                                                            |
-| **Communication**  | <img src="docs/assets/icons/slack.png" width="16"> Slack · <img src="docs/assets/icons/pagerduty.png" width="16"> PagerDuty · Google Docs                                                                                                                                              |
-| **Deployment**     | <img src="docs/assets/icons/aws.png" width="16"> AWS Bedrock · <img src="docs/assets/icons/aws.png" width="16"> AWS EC2 · LangSmith · Vercel                                                                                                                                          |
+| Category                  | Integrations                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **AI / LLM Providers**    | Anthropic · OpenAI · Ollama · Google Gemini · OpenRouter · NVIDIA NIM                                                                                                                                                                                                                                                                                                                                           |
+| **Observability**         | <img src="docs/assets/icons/grafana.webp" width="16"> Grafana (Loki · Mimir · Tempo) · <img src="docs/assets/icons/datadog.svg" width="16"> Datadog · Honeycomb · Coralogix · <img src="docs/assets/icons/cloudwatch.png" width="16"> CloudWatch · <img src="docs/assets/icons/sentry.png" width="16"> Sentry · Elasticsearch                                                                                   |
+| **Infrastructure**        | <img src="docs/assets/icons/kubernetes.png" width="16"> Kubernetes · <img src="docs/assets/icons/aws.png" width="16"> AWS (S3 · Lambda · EKS · EC2 · Bedrock) · <img src="docs/assets/icons/gcp.jpg" width="16"> GCP · <img src="docs/assets/icons/azure.png" width="16"> Azure                                                                                                                                |
+| **Database**              | MongoDB                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Data Platform**         | Apache Airflow · Apache Kafka · Apache Spark                                                                                                                                                                                                                                                                                                                                                                    |
+| **Dev Tools**             | <img src="docs/assets/icons/github.webp" width="16"> GitHub · GitHub MCP                                                                                                                                                                                                                                                                                                                                       |
+| **Incident Management**   | <img src="docs/assets/icons/pagerduty.png" width="16"> PagerDuty · Opsgenie · Jira                                                                                                                                                                                                                                                                                                                             |
+| **Communication**         | <img src="docs/assets/icons/slack.png" width="16"> Slack · Google Docs                                                                                                                                                                                                                                                                                                                                          |
+| **Deployment & Tracing**  | Vercel · LangSmith                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Protocols**             | MCP (Model Context Protocol)                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ---
 
