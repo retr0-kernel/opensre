@@ -20,7 +20,7 @@
     <a href="https://app.tracer.cloud/">Getting Started</a> ·
     <a href="https://tracer.cloud/">Tracer Agent</a> ·
     <a href="https://tracer.mintlify.app/">Docs</a> ·
-    <a href="docs/FAQ.md">FAQ</a> ·
+    <a href="https://tracer.mintlify.app/faq">FAQ</a> ·
     <a href="https://trust.tracer.cloud/">Security</a>
   </strong>
 </p>
