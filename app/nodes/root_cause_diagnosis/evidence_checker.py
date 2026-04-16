@@ -23,6 +23,11 @@ _INVESTIGATED_EVIDENCE_KEYS = frozenset({
     "cloudwatch_logs",
     "datadog_logs",
     "datadog_monitors",
+    "eks_pods",
+    "eks_events",
+    "eks_deployments",
+    "eks_node_health",
+    "eks_pod_logs",
 })
 
 

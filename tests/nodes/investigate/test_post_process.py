@@ -55,6 +55,6 @@ from app.nodes.investigate.processing.post_process import merge_evidence
 def test_merge_evidence_eks_tools(action_name, data, expected_keys):
     result = ActionExecutionResult(action_name=action_name, success=True, data=data)
     evidence = merge_evidence({}, {action_name: result})
-    
+
     for key in expected_keys:
         assert key in evidence
