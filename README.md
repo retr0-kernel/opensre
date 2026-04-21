@@ -649,6 +649,13 @@ Thanks goes to these amazing people:
             <sub><b>divijgera</b></sub>
         </a>
     </td>
+            <td align="center">
+        <a href="https://github.com/daxp472">
+            <img src="https://avatars.githubusercontent.com/u/177292922?v=4" width="100" alt="daxp472"/>
+            <br />
+            <sub><b>daxp472</b></sub>
+        </a>
+    </td>
 		</tr>
 	</tbody>
 </table>
