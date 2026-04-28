@@ -936,28 +936,83 @@ html.dark svg g[fill="currentColor"] {
   fill: #FFFFFF !important;
 }
 
-/* Sign up - blue background */
+/* Try Tracer CTA */
 nav a[href*="sign-up"],
 header a[href*="sign-up"],
 #sidebar a[href*="sign-up"],
-#navigation-items a[href*="sign-up"],
-nav a[href*="sign-up"]:link,
-nav a[href*="sign-up"]:visited,
-nav a[href*="sign-up"]:active {
-  padding: 8px 16px !important;
-  background-color: #171717 !important;
-  background: #171717 !important;
+#navigation-items a[href*="sign-up"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  border: 1px solid #171717 !important;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease !important;
+}
+
+nav a[href*="sign-up"],
+header a[href*="sign-up"] {
+  padding: 0.625rem 0.95rem !important;
   border-radius: 0.125rem !important;
+  background: #171717 !important;
   color: #ffffff !important;
-  border: none !important;
+  box-shadow: 0 1px 2px rgba(23, 23, 23, 0.12) !important;
 }
 
 nav a[href*="sign-up"]::after,
 header a[href*="sign-up"]::after,
+nav a[href*="sign-up"] svg,
+header a[href*="sign-up"] svg {
+  color: #ffffff !important;
+  fill: none !important;
+  stroke: #ffffff !important;
+}
+
+nav a[href*="sign-up"]:hover,
+header a[href*="sign-up"]:hover {
+  background: #2b2b2b !important;
+  border-color: #2b2b2b !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 24px rgba(23, 23, 23, 0.12) !important;
+}
+
+nav a[href*="sign-up"]:hover::after,
+header a[href*="sign-up"]:hover::after,
+nav a[href*="sign-up"]:hover svg,
+header a[href*="sign-up"]:hover svg {
+  color: #ffffff !important;
+  fill: none !important;
+  stroke: #ffffff !important;
+}
+
+/* Sidebar/mobile CTA gets a more card-like treatment */
+#sidebar a[href*="sign-up"],
+#navigation-items a[href*="sign-up"] {
+  display: flex !important;
+  width: calc(100% - 1rem) !important;
+  min-height: 36px !important;
+  margin: 0.5rem auto 0 !important;
+  padding: 0.625rem 0.875rem !important;
+  justify-content: center !important;
+  text-align: center !important;
+  border-radius: 0.125rem !important;
+  background: #111111 !important;
+  border-color: #111111 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
 #sidebar a[href*="sign-up"]::after,
 #navigation-items a[href*="sign-up"]::after,
-nav a[href*="sign-up"] svg,
-header a[href*="sign-up"] svg,
 #sidebar a[href*="sign-up"] svg,
 #navigation-items a[href*="sign-up"] svg {
   color: #ffffff !important;
@@ -965,60 +1020,88 @@ header a[href*="sign-up"] svg,
   stroke: #ffffff !important;
 }
 
+#sidebar a[href*="sign-up"]:hover,
+#navigation-items a[href*="sign-up"]:hover {
+  background: #000000 !important;
+  border-color: #000000 !important;
+  color: #ffffff !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+#sidebar a[href*="sign-up"]:hover::after,
+#navigation-items a[href*="sign-up"]:hover::after,
+#sidebar a[href*="sign-up"]:hover svg,
+#navigation-items a[href*="sign-up"]:hover svg {
+  color: #ffffff !important;
+  fill: none !important;
+  stroke: #ffffff !important;
+}
+
 html.dark nav a[href*="sign-up"],
-html.dark header a[href*="sign-up"],
-html.dark #sidebar a[href*="sign-up"],
-html.dark #navigation-items a[href*="sign-up"] {
-  background-color: #FFFFFF !important;
-  background: #FFFFFF !important;
+html.dark header a[href*="sign-up"] {
+  background: #f5f5f5 !important;
+  border-color: #e5e5e5 !important;
   color: #171717 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18) !important;
 }
 
 html.dark nav a[href*="sign-up"]::after,
 html.dark header a[href*="sign-up"]::after,
-html.dark #sidebar a[href*="sign-up"]::after,
-html.dark #navigation-items a[href*="sign-up"]::after,
 html.dark nav a[href*="sign-up"] svg,
-html.dark header a[href*="sign-up"] svg,
-html.dark #sidebar a[href*="sign-up"] svg,
-html.dark #navigation-items a[href*="sign-up"] svg {
+html.dark header a[href*="sign-up"] svg {
   color: #171717 !important;
   fill: none !important;
   stroke: #171717 !important;
 }
 
-/* Sign up hover - text color matches page mode */
-nav a[href*="sign-up"]:hover,
-header a[href*="sign-up"]:hover {
-  background-color: transparent !important;
-  background: transparent !important;
-  color: #000000 !important;
-  border: 1px solid #000000 !important;
-}
-
-nav a[href*="sign-up"]:hover::after,
-header a[href*="sign-up"]:hover::after,
-nav a[href*="sign-up"]:hover svg,
-header a[href*="sign-up"]:hover svg {
-  color: #000000 !important;
-  fill: #000000 !important;
-  stroke: #000000 !important;
-}
-
 html.dark nav a[href*="sign-up"]:hover,
 html.dark header a[href*="sign-up"]:hover {
-  background-color: transparent !important;
-  background: transparent !important;
-  color: #ffffff !important;
-  border: 1px solid #ffffff !important;
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #171717 !important;
 }
 
 html.dark nav a[href*="sign-up"]:hover::after,
 html.dark header a[href*="sign-up"]:hover::after,
 html.dark nav a[href*="sign-up"]:hover svg,
 html.dark header a[href*="sign-up"]:hover svg {
+  color: #171717 !important;
+  fill: none !important;
+  stroke: #171717 !important;
+}
+
+html.dark #sidebar a[href*="sign-up"],
+html.dark #navigation-items a[href*="sign-up"] {
+  background: #121212 !important;
+  border-color: #2f2f2f !important;
+  color: #f5f5f5 !important;
+  box-shadow: none !important;
+}
+
+html.dark #sidebar a[href*="sign-up"]::after,
+html.dark #navigation-items a[href*="sign-up"]::after,
+html.dark #sidebar a[href*="sign-up"] svg,
+html.dark #navigation-items a[href*="sign-up"] svg {
+  color: #f5f5f5 !important;
+  fill: none !important;
+  stroke: #f5f5f5 !important;
+}
+
+html.dark #sidebar a[href*="sign-up"]:hover,
+html.dark #navigation-items a[href*="sign-up"]:hover {
+  background: #1a1a1a !important;
+  border-color: #4a4a4a !important;
   color: #ffffff !important;
-  fill: #ffffff !important;
+  transform: none !important;
+}
+
+html.dark #sidebar a[href*="sign-up"]:hover::after,
+html.dark #navigation-items a[href*="sign-up"]:hover::after,
+html.dark #sidebar a[href*="sign-up"]:hover svg,
+html.dark #navigation-items a[href*="sign-up"]:hover svg {
+  color: #ffffff !important;
+  fill: none !important;
   stroke: #ffffff !important;
 }
 
@@ -1172,34 +1255,10 @@ html.dark .index-page [class*="Card" i] [class*="icon"] {
 }
 
 
-/* Sign-up button override — must be last to win specificity wars */
-html.dark nav a[href*="sign-up"],
-html.dark nav a[href*="sign-up"] *,
-html.dark header a[href*="sign-up"],
-html.dark header a[href*="sign-up"] *,
-html.dark #sidebar a[href*="sign-up"],
-html.dark #sidebar a[href*="sign-up"] *,
-html.dark #sidebar-content a[href*="sign-up"],
-html.dark #sidebar-content a[href*="sign-up"] *,
-html.dark #navigation-items a[href*="sign-up"],
-html.dark #navigation-items a[href*="sign-up"] * {
-  color: #171717 !important;
-  background-color: #FFFFFF !important;
-  background: #FFFFFF !important;
-}
-
-html.dark nav a[href*="sign-up"] svg,
-html.dark nav a[href*="sign-up"] svg *,
-html.dark header a[href*="sign-up"] svg,
-html.dark header a[href*="sign-up"] svg *,
-html.dark #sidebar a[href*="sign-up"] svg,
-html.dark #sidebar a[href*="sign-up"] svg *,
-html.dark #navigation-items a[href*="sign-up"] svg,
-html.dark #navigation-items a[href*="sign-up"] svg * {
-  color: #171717 !important;
-  fill: none !important;
-  stroke: #171717 !important;
-  background-color: transparent !important;
+/* Keep sidebar CTA text/icon colors stable across nested elements */
+#sidebar a[href*="sign-up"] *,
+#navigation-items a[href*="sign-up"] * {
+  color: inherit !important;
   background: transparent !important;
 }
 
