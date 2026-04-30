@@ -81,7 +81,8 @@
               "grafana",
               "honeycomb",
               "opsgenie",
-              "sentry"
+              "sentry",
+              "splunk"
             ]
           },
           {

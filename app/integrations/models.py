@@ -533,6 +533,38 @@ class AlertmanagerIntegrationConfig(StrictConfigModel):
         return self
 
 
+class SplunkIntegrationConfig(StrictConfigModel):
+    """Normalized Splunk credentials used by resolution and verification flows."""
+
+    base_url: str
+    token: str = ""
+    index: str = "main"
+    verify_ssl: bool = True
+    ca_bundle: str = ""
+    integration_id: str = ""
+
+    @field_validator("base_url", mode="before")
+    @classmethod
+    def _normalize_base_url(cls, value: object) -> str:
+        return str(value or "").strip().rstrip("/")
+
+    @field_validator("token", mode="before")
+    @classmethod
+    def _normalize_token(cls, value: object) -> str:
+        return str(value or "").strip()
+
+    @field_validator("index", mode="before")
+    @classmethod
+    def _normalize_index(cls, value: object) -> str:
+        normalized = str(value or "main").strip()
+        return normalized or "main"
+
+    @field_validator("ca_bundle", mode="before")
+    @classmethod
+    def _normalize_ca_bundle(cls, value: object) -> str:
+        return str(value or "").strip()
+
+
 class ArgoCDIntegrationConfig(StrictConfigModel):
     """Normalized Argo CD credentials used by resolution and verification flows."""
 
@@ -679,5 +711,6 @@ class EffectiveIntegrations(StrictConfigModel):
     openobserve: EffectiveIntegrationEntry | None = None
     opensearch: EffectiveIntegrationEntry | None = None
     alertmanager: EffectiveIntegrationEntry | None = None
+    splunk: EffectiveIntegrationEntry | None = None
     airflow: dict[str, Any] | None = None
     argocd: EffectiveIntegrationEntry | None = None
